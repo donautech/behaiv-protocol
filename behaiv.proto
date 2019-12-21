@@ -1,0 +1,23 @@
+syntax = "proto3";
+// Java
+option java_package = "tech.donau.behaiv";
+option java_multiple_files = true;
+
+
+message Action {
+    int64 local_id = 1;
+    int64 prev_local_id = 2;
+    string action = 3;
+    string object = 4;
+    int32 current_screen_id = 5;
+    repeated int32 screen_stack = 6;
+//    repeated Event events = 7; TODO
+
+    map<string, string> attributes = 8;
+}
+
+
+message Screen {
+    int32 id = 1;
+    string name = 2;
+}
